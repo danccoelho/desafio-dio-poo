@@ -16,6 +16,12 @@ public class Dev {
 		
 	}
 	
+	public void cancelarInscricaoBootCamp(BootCamp bc) {
+		conteudosInscritos.removeAll(bc.getConteudos());
+		bc.getDevInscritos().remove(this);
+		
+	}
+	
 	public void progredir() {
 		Optional<Conteudo> conteudo = conteudosInscritos.stream().findFirst();
 		if(conteudo.isPresent()) {
